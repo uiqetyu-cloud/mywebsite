@@ -1,0 +1,461 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+    <title>ميلاد غدير الأغلى 🤍</title>
+    
+    <!-- PWA Headers -->
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="theme-color" content="#1b2622" />
+    
+    <!-- iOS meta tags for native PWA behavior -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="غدير 🤍" />
+    <link rel="apple-touch-icon" href="/icon-192.png" />
+    
+    <!-- Google Fonts (Cairo & Playfair Display) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Playfair+Display:ital,wght@1,600&display=swap" rel="stylesheet">
+
+    <!-- Lucide Icons via CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              cairo: ['Cairo', 'sans-serif'],
+              playfair: ['Playfair Display', 'serif'],
+            },
+            colors: {
+              olive: {
+                deep: '#0f1715',
+                dark: '#1b2622',
+                medium: '#2a3b35',
+                light: '#445c53',
+              },
+              gold: {
+                glow: '#e2b474',
+              }
+            }
+          }
+        }
+      }
+    </script>
+
+    <!-- Custom CSS animations and Glassmorphic effects -->
+    <style>
+      @keyframes heart-pulse {
+        0%, 100% {
+          transform: scale(1);
+          filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.3)) drop-shadow(0 0 5px rgba(226, 180, 116, 0.2));
+        }
+        50% {
+          transform: scale(1.18);
+          filter: drop-shadow(0 0 25px rgba(255, 255, 255, 0.7)) drop-shadow(0 0 15px rgba(226, 180, 116, 0.4));
+        }
+      }
+
+      @keyframes float-slow {
+        0%, 100% { transform: translateY(0px) translateX(0px) scale(1); }
+        50% { transform: translateY(-20px) translateX(15px) scale(1.08); }
+      }
+
+      @keyframes float-reverse {
+        0%, 100% { transform: translateY(0px) translateX(0px) scale(1); }
+        50% { transform: translateY(15px) translateX(-20px) scale(0.92); }
+      }
+
+      @keyframes pop-in {
+        0% { opacity: 0; transform: scale(0.92); }
+        100% { opacity: 1; transform: scale(1); }
+      }
+
+      @keyframes particle-fade-out {
+        0% {
+          transform: translate(-50%, -50%) translate(0px, 0px) scale(0.4) rotate(0deg);
+          opacity: 1;
+        }
+        100% {
+          transform: translate(-50%, -50%) translate(var(--dx), var(--dy)) scale(var(--scale)) rotate(var(--rot));
+          opacity: 0;
+        }
+      }
+
+      @keyframes cursor-blink {
+        50% { opacity: 0; }
+      }
+
+      .animate-pulse-heart {
+        animation: heart-pulse 1.3s infinite ease-in-out;
+      }
+      .animate-float-slow {
+        animation: float-slow 8s infinite ease-in-out;
+      }
+      .animate-float-reverse {
+        animation: float-reverse 10s infinite ease-in-out;
+      }
+      .animate-pop-in {
+        animation: pop-in 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      }
+      .animate-heart-particle {
+        animation: particle-fade-out var(--dur) cubic-bezier(0.1, 0.8, 0.25, 1) forwards;
+      }
+      .typewriter-cursor::after {
+        content: '|';
+        animation: cursor-blink 0.8s infinite step-start;
+        color: #e2b474;
+      }
+      .glass-panel {
+        background: rgba(27, 38, 34, 0.55);
+        backdrop-filter: blur(20px) saturate(140%);
+        -webkit-backdrop-filter: blur(20px) saturate(140%);
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4);
+      }
+      .glass-button {
+        background: rgba(255, 255, 255, 0.08);
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+      .glass-button:not([disabled]):hover {
+        background: rgba(255, 255, 255, 0.15);
+        border-color: rgba(255, 255, 255, 0.3);
+        transform: translateY(-1px);
+      }
+      .glass-button:not([disabled]):active {
+        background: rgba(255, 255, 255, 0.05);
+        transform: translateY(1px) scale(0.97);
+      }
+    </style>
+  </head>
+  <body class="bg-[#0d1412] text-white flex flex-col items-center justify-center min-h-screen w-full font-sans overflow-hidden px-4 select-none">
+    
+    <!-- Decorative Interactive Background Layers -->
+    <div class="absolute inset-0 overflow-hidden pointer-events-none z-0">
+      <div class="absolute -top-12 -left-12 w-80 h-80 bg-[#1b2622] rounded-full blur-[80px] opacity-40 animate-float-slow"></div>
+      <div class="absolute -bottom-20 -right-20 w-96 h-96 bg-[#2a3b35] rounded-full blur-[90px] opacity-35 animate-float-reverse"></div>
+      <div class="absolute top-1/3 left-1/2 -translate-x-1/2 w-72 h-72 bg-[#101917] rounded-full blur-[100px] opacity-50"></div>
+      
+      <!-- Tiny golden sparks -->
+      <div class="absolute top-12 left-1/4 w-1 h-1 bg-[#e2b474] rounded-full opacity-60 animate-pulse"></div>
+      <div class="absolute top-1/3 right-1/4 w-1.5 h-1.5 bg-[#e2b474] rounded-full opacity-40 animate-pulse" style="animation-delay: 1s;"></div>
+      <div class="absolute bottom-12 left-1/3 w-1.5 h-1.5 bg-white rounded-full opacity-30 animate-pulse" style="animation-delay: 2.5s;"></div>
+      <div class="absolute bottom-1/4 right-12 w-1 h-1 bg-[#e2b474] rounded-full opacity-50 animate-pulse" style="animation-delay: 1.8s;"></div>
+    </div>
+
+    <!-- PWA Install Banner -->
+    <button
+      id="pwa-banner"
+      style="display: none;"
+      class="absolute top-4 sm:top-6 z-30 flex items-center gap-2 bg-[#1b2622]/80 backdrop-blur-md px-4 py-2 rounded-full border border-white/10 text-xs text-[#e2b474] font-medium active:scale-95 shadow-md hover:bg-[#2a3b35]/80 transition-all cursor-pointer animate-pop-in duration-500"
+    >
+      <i data-lucide="smartphone" class="w-3.5 h-3.5 animate-bounce"></i>
+      <span>تثبيت التطبيق على الشاشة الرئيسية 📱</span>
+    </button>
+
+    <!-- PERFECTLY SQUARE CARD CONTAINER (260x260px) centered exactly -->
+    <div 
+      id="birthday-gift-card"
+      class="relative z-10 w-[260px] h-[260px] rounded-3xl p-5 flex flex-col justify-between items-center text-center glass-panel select-none overflow-hidden animate-pop-in"
+    >
+      
+      <!-- Floating heart burst particles container -->
+      <div id="particles-container" class="absolute inset-0 pointer-events-none overflow-hidden z-20"></div>
+
+      <!-- STEP 1 CONTAINER -->
+      <div id="view-step-1" class="flex flex-col justify-between items-center w-full h-full py-1">
+        <span class="text-xs font-mono text-[#e2b474]/70 uppercase tracking-widest">Mylady 👑</span>
+        <div class="flex-1 flex items-center justify-center px-1">
+          <h2 class="text-[20px] font-bold text-white font-cairo leading-snug tracking-tight">
+            <span id="typed-text-1" class="typewriter-cursor"></span>
+          </h2>
+        </div>
+        <button
+          id="btn-step-1"
+          disabled
+          class="w-full py-2.5 rounded-2xl text-sm font-semibold font-cairo shadow-inner glass-button text-white flex items-center justify-center gap-1.5 cursor-pointer opacity-40 pointer-events-none"
+        >
+          <span>زينة</span>
+          <i data-lucide="sparkles" class="w-3.5 h-3.5 text-[#e2b474]"></i>
+        </button>
+      </div>
+
+      <!-- STEP 2 CONTAINER (Hidden by default) -->
+      <div id="view-step-2" class="hidden flex flex-col justify-between items-center w-full h-full py-1">
+        <span class="text-xs font-mono text-[#e2b474]/70 uppercase tracking-widest">Specials ✨</span>
+        <div class="flex-1 flex items-center justify-center px-1">
+          <h2 class="text-[19px] font-bold text-white font-cairo leading-snug tracking-tight">
+            <span id="typed-text-2" class="typewriter-cursor"></span>
+          </h2>
+        </div>
+        <button
+          id="btn-step-2"
+          disabled
+          class="w-full py-2.5 rounded-2xl text-sm font-semibold font-cairo glass-button text-white flex items-center justify-center gap-1.5 cursor-pointer opacity-40 pointer-events-none"
+        >
+          <span>ميلادي 🎂</span>
+        </button>
+      </div>
+
+      <!-- STEP 3 CONTAINER (Hidden by default) -->
+      <div id="view-step-3" class="hidden flex flex-col justify-between items-center w-full h-full py-1">
+        <h3 class="text-[14px] px-1 font-semibold text-white/95 font-cairo tracking-tight leading-tight select-none">
+          <span id="typed-text-3" class="typewriter-cursor"></span>
+        </h3>
+
+        <!-- Pulsing glowing heart -->
+        <div 
+          id="interactable-love-heart"
+          class="relative w-20 h-20 flex items-center justify-center cursor-pointer group active:scale-90 transition-transform duration-150 select-none my-1"
+          title="دوسي اهنا 🤍"
+        >
+          <svg viewBox="0 0 24 24" fill="none" class="w-16 h-16 animate-pulse-heart select-none">
+            <defs>
+              <linearGradient id="heartGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#ffffff" />
+                <stop offset="60%" stop-color="#e2b474" />
+                <stop offset="100%" stop-color="#bf924e" />
+              </linearGradient>
+              <filter id="glow-effect" x="-20%" y="-20%" width="140%" height="140%">
+                <feGaussianBlur stdDeviation="3" result="blur" />
+                <feComposite in="SourceGraphic" in2="blur" operator="over" />
+              </filter>
+            </defs>
+
+            <!-- Heart thread outlines (خيوط) -->
+            <path 
+              d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" 
+              stroke="url(#heartGrad)" 
+              stroke-width="1.2" 
+              stroke-dasharray="3,1"
+              class="opacity-75"
+            />
+            <path 
+              d="M12 19.6l-1.15-1.05C6.1 14.36 3.2 11.5 3.2 8.5c0-2.3 1.8-4.1 4.1-4.1 1.4 0 2.8.7 3.7 1.8.9-1.1 2.3-1.8 3.7-1.8 2.3 0 4.1 1.8 4.1 4.1 0 3-2.9 5.86-7.65 10.05L12 19.6z" 
+              stroke="url(#heartGrad)" 
+              stroke-width="1" 
+              stroke-dasharray="1,2"
+            />
+            <path 
+              d="M12 17.5l-.85-.78C6.9 13.05 4.5 10.5 4.5 8.5c0-1.6 1.3-2.9 2.9-2.9 1.1 0 2.2.6 2.8 1.5.6-.9 1.7-1.5 2.8-1.5 1.6 0 2.9 1.3 2.9 2.9 0 2-2.4 4.55-6.65 8.22L12 17.5z" 
+              fill="url(#heartGrad)" 
+              fill-opacity="0.8"
+              filter="url(#glow-effect)"
+            />
+          </svg>
+          <span class="absolute -bottom-1 text-[10px] font-semibold text-[#e2b474] font-cairo tracking-wide animate-pulse">
+            دوسي هنا 🤍
+          </span>
+        </div>
+        <span class="text-[9px] font-mono text-white/40 tracking-wider">Tap to express love</span>
+      </div>
+
+      <!-- STEP 4 CONTAINER (Hidden by default) -->
+      <div id="view-step-4" class="hidden flex flex-col justify-between items-center w-full h-full py-1">
+        <span class="text-xs font-mono text-[#e2b474]/90 uppercase tracking-widest">Always & Forever 🤍</span>
+        <div class="flex-1 flex items-center justify-center my-1 select-none">
+          <p class="text-[14px] font-medium text-white/90 font-cairo leading-relaxed text-center select-none max-h-[125px] overflow-y-auto px-1">
+            <span id="typed-text-4" class="typewriter-cursor"></span>
+          </p>
+        </div>
+        <a
+          id="btn-step-4-song"
+          href="https://youtu.be/3YxaaGgTQYM?si=LIYIsqHo6nRV6ZSR"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="w-full py-2.5 rounded-2xl text-sm font-semibold font-cairo bg-gradient-to-r from-[#e2b474] to-[#cba063] hover:from-[#f3ca8f] hover:to-[#dfb578] text-black flex items-center justify-center gap-1.5 cursor-pointer shadow-lg active:scale-95 transition-all text-center select-none decoration-none no-underline"
+        >
+          <span>استمعي للأغنية 🎵</span>
+          <i data-lucide="music" class="w-3.5 h-3.5 text-black"></i>
+        </a>
+      </div>
+
+    </div>
+
+    <!-- Humid copyright footer -->
+    <footer class="absolute bottom-6 z-10 text-[10px] font-mono text-white/30 tracking-tight text-center pointer-events-none">
+      <span>Ghadir’s Day 🤍 Crafted For Ghadir</span>
+    </footer>
+
+    <!-- Interactive script orchestration -->
+    <script>
+      // Initialize Lucide icons
+      lucide.createIcons();
+
+      // Dialog messages logic
+      const textConfig = {
+        1: "شلونج ملاكي؟",
+        2: "اليوم تاريخ ميلاد منو؟",
+        3: "إذا تحبيني دوسي القلب 🤍",
+        4: "غدير.. عبالج نسيت تاريخ اليوم الي انولدت بي أحلى بنية؟ أموت عليج"
+      };
+
+      let currentStep = 1;
+
+      // Safe typewriter implementation
+      function runTypewriter(stepIndex, callback) {
+        const targetElement = document.getElementById(`typed-text-${stepIndex}`);
+        if (!targetElement) return;
+
+        const text = textConfig[stepIndex];
+        targetElement.textContent = "";
+        targetElement.classList.add("typewriter-cursor");
+
+        let charIndex = 0;
+        const speed = stepIndex === 4 ? 42 : 75;
+
+        const interval = setInterval(() => {
+          targetElement.textContent += text.charAt(charIndex);
+          charIndex++;
+          if (charIndex >= text.length) {
+            clearInterval(interval);
+            targetElement.classList.remove("typewriter-cursor");
+            if (callback) callback();
+          }
+        }, speed);
+      }
+
+      // Transition step screens gracefully
+      function goToStep(nextStep) {
+        const currentView = document.getElementById(`view-step-${currentStep}`);
+        const nextView = document.getElementById(`view-step-${nextStep}`);
+
+        if (currentView) currentView.classList.add("hidden");
+        if (nextView) {
+          nextView.classList.remove("hidden");
+          nextView.classList.add("animate-pop-in");
+        }
+
+        currentStep = nextStep;
+        runTypewriter(nextStep, () => {
+          // Enable corresponding buttons once typing finishes
+          if (nextStep === 1) {
+            const btn = document.getElementById("btn-step-1");
+            btn.removeAttribute("disabled");
+            btn.classList.remove("opacity-40", "pointer-events-none");
+          } else if (nextStep === 2) {
+            const btn = document.getElementById("btn-step-2");
+            btn.removeAttribute("disabled");
+            btn.classList.remove("opacity-40", "pointer-events-none");
+          }
+        });
+      }
+
+      // Step 1 Button Click
+      document.getElementById("btn-step-1").addEventListener("click", () => {
+        goToStep(2);
+      });
+
+      // Step 2 Button Click
+      document.getElementById("btn-step-2").addEventListener("click", () => {
+        goToStep(3);
+      });
+
+      // Heart interactive floating bursts
+      const heartContainer = document.getElementById("interactable-love-heart");
+      const particlesContainer = document.getElementById("particles-container");
+
+      heartContainer.addEventListener("click", (e) => {
+        const cardRect = document.getElementById("birthday-gift-card").getBoundingClientRect();
+        const clickX = e.clientX - cardRect.left;
+        const clickY = e.clientY - cardRect.top;
+
+        // Visual Sparkle audio synthesis pop representation
+        try {
+          const AudioCtxClass = window.AudioContext || window.webkitAudioContext;
+          if (AudioCtxClass) {
+            const audioCtx = new AudioCtxClass();
+            const osc = audioCtx.createOscillator();
+            const gain = audioCtx.createGain();
+            osc.connect(gain);
+            gain.connect(audioCtx.destination);
+            osc.type = 'sine';
+            osc.frequency.setValueAtTime(440, audioCtx.currentTime); 
+            osc.frequency.exponentialRampToValueAtTime(880, audioCtx.currentTime + 0.1); 
+            gain.gain.setValueAtTime(0.08, audioCtx.currentTime);
+            gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.15);
+            osc.start();
+            osc.stop(audioCtx.currentTime + 0.15);
+          }
+        } catch (_) {}
+
+        // Generate custom floating hearts
+        for (let i = 0; i < 15; i++) {
+          const p = document.createElement("span");
+          p.textContent = "❤";
+          p.className = "absolute text-rose-500 pointer-events-none font-bold text-lg select-none animate-heart-particle";
+          p.style.left = `${clickX}px`;
+          p.style.top = `${clickY}px`;
+          
+          const angle = Math.random() * Math.PI * 2;
+          const velocity = Math.random() * 80 + 35; 
+          const dx = Math.cos(angle) * velocity;
+          const dy = Math.sin(angle) * velocity - 50; 
+          const rotation = Math.random() * 240 - 120;
+          const scale = Math.random() * 0.8 + 0.5;
+          const duration = Math.random() * 0.4 + 0.8;
+
+          p.style.setProperty("--dx", `${dx}px`);
+          p.style.setProperty("--dy", `${dy}px`);
+          p.style.setProperty("--rot", `${rotation}deg`);
+          p.style.setProperty("--scale", scale);
+          p.style.setProperty("--dur", `${duration}s`);
+          p.style.textShadow = "0 0 8px rgba(244,63,94,0.4)";
+
+          particlesContainer.appendChild(p);
+
+          // Garbage collect particles
+          setTimeout(() => {
+            p.remove();
+          }, duration * 1000);
+        }
+
+        // Proceed gracefully
+        setTimeout(() => {
+          goToStep(4);
+        }, 1200);
+      });
+
+      // Initialize the flow
+      window.addEventListener("DOMContentLoaded", () => {
+        goToStep(1);
+      });
+
+      // PWA Install Prompt Handler
+      let deferredPrompt;
+      const pwaBanner = document.getElementById("pwa-banner");
+
+      window.addEventListener("beforeinstallprompt", (e) => {
+        e.preventDefault();
+        deferredPrompt = e;
+        pwaBanner.style.display = "flex";
+      });
+
+      pwaBanner.addEventListener("click", async () => {
+        if (!deferredPrompt) return;
+        deferredPrompt.prompt();
+        const { outcome } = await deferredPrompt.userChoice;
+        if (outcome === "accepted") {
+          pwaBanner.style.display = "none";
+        }
+        deferredPrompt = null;
+      });
+
+      // Service Worker registration
+      if ('serviceWorker' in navigator) {
+        window.navigator.serviceWorker.register('/sw.js')
+          .then((reg) => console.log('SW Registered', reg.scope))
+          .catch((err) => console.error('SW Failed', err));
+      }
+    </script>
+  </body>
+</html>
