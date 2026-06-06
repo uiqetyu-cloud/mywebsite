@@ -165,7 +165,7 @@
     <!-- PERFECTLY SQUARE CARD CONTAINER (260x260px) centered exactly -->
     <div 
       id="birthday-gift-card"
-      class="relative z-10 w-[260px] h-[260px] rounded-3xl p-5 flex flex-col justify-between items-center text-center glass-panel select-none overflow-hidden animate-pop-in"
+      class="relative z-10 w-[260px] h-[260px] rounded-3xl p-4 flex flex-col justify-between items-center text-center glass-panel select-none overflow-hidden animate-pop-in"
     >
       
       <!-- Floating heart burst particles container -->
@@ -174,6 +174,7 @@
       <!-- STEP 1 CONTAINER -->
       <div id="view-step-1" class="flex flex-col justify-between items-center w-full h-full py-1">
         <span class="text-xs font-mono text-[#e2b474]/70 uppercase tracking-widest">Mylady 👑</span>
+
         <div class="flex-1 flex items-center justify-center px-1">
           <h2 class="text-[20px] font-bold text-white font-cairo leading-snug tracking-tight">
             <span id="typed-text-1" class="typewriter-cursor"></span>
@@ -182,14 +183,14 @@
         <button
           id="btn-step-1"
           disabled
-          class="w-full py-2.5 rounded-2xl text-sm font-semibold font-cairo shadow-inner glass-button text-white flex items-center justify-center gap-1.5 cursor-pointer opacity-40 pointer-events-none"
+          class="w-full py-2 rounded-xl text-sm font-semibold font-cairo shadow-inner glass-button text-white flex items-center justify-center gap-1.5 cursor-pointer opacity-40 pointer-events-none"
         >
           <span>زينة</span>
-          <i data-lucide="sparkles" class="w-3.5 h-3.5 text-[#e2b474]"></i>
+          <i class="w-3.5 h-3.5 text-[#e2b474]" data-lucide="sparkles"></i>
         </button>
       </div>
 
-      <!-- STEP 2 CONTAINER (Hidden by default) -->
+      <!-- STEP 2 CONTAINER -->
       <div id="view-step-2" class="hidden flex flex-col justify-between items-center w-full h-full py-1">
         <span class="text-xs font-mono text-[#e2b474]/70 uppercase tracking-widest">Specials ✨</span>
         <div class="flex-1 flex items-center justify-center px-1">
@@ -200,84 +201,101 @@
         <button
           id="btn-step-2"
           disabled
-          class="w-full py-2.5 rounded-2xl text-sm font-semibold font-cairo glass-button text-white flex items-center justify-center gap-1.5 cursor-pointer opacity-40 pointer-events-none"
+          class="w-full py-2 rounded-xl text-sm font-semibold font-cairo glass-button text-white flex items-center justify-center gap-1.5 cursor-pointer opacity-40 pointer-events-none"
         >
           <span>ميلادي 🎂</span>
         </button>
       </div>
 
-      <!-- STEP 3 CONTAINER (Hidden by default) -->
+      <!-- STEP 3 CONTAINER (غدير تعرفين مفروض انطيج غزل على هل جمال؟) -->
       <div id="view-step-3" class="hidden flex flex-col justify-between items-center w-full h-full py-1">
-        <h3 class="text-[14px] px-1 font-semibold text-white/95 font-cairo tracking-tight leading-tight select-none">
-          <span id="typed-text-3" class="typewriter-cursor"></span>
-        </h3>
-
-        <!-- Pulsing glowing heart -->
-        <div 
-          id="interactable-love-heart"
-          class="relative w-20 h-20 flex items-center justify-center cursor-pointer group active:scale-90 transition-transform duration-150 select-none my-1"
-          title="دوسي اهنا 🤍"
-        >
-          <svg viewBox="0 0 24 24" fill="none" class="w-16 h-16 animate-pulse-heart select-none">
-            <defs>
-              <linearGradient id="heartGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stop-color="#ffffff" />
-                <stop offset="60%" stop-color="#e2b474" />
-                <stop offset="100%" stop-color="#bf924e" />
-              </linearGradient>
-              <filter id="glow-effect" x="-20%" y="-20%" width="140%" height="140%">
-                <feGaussianBlur stdDeviation="3" result="blur" />
-                <feComposite in="SourceGraphic" in2="blur" operator="over" />
-              </filter>
-            </defs>
-
-            <!-- Heart thread outlines (خيوط) -->
-            <path 
-              d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" 
-              stroke="url(#heartGrad)" 
-              stroke-width="1.2" 
-              stroke-dasharray="3,1"
-              class="opacity-75"
-            />
-            <path 
-              d="M12 19.6l-1.15-1.05C6.1 14.36 3.2 11.5 3.2 8.5c0-2.3 1.8-4.1 4.1-4.1 1.4 0 2.8.7 3.7 1.8.9-1.1 2.3-1.8 3.7-1.8 2.3 0 4.1 1.8 4.1 4.1 0 3-2.9 5.86-7.65 10.05L12 19.6z" 
-              stroke="url(#heartGrad)" 
-              stroke-width="1" 
-              stroke-dasharray="1,2"
-            />
-            <path 
-              d="M12 17.5l-.85-.78C6.9 13.05 4.5 10.5 4.5 8.5c0-1.6 1.3-2.9 2.9-2.9 1.1 0 2.2.6 2.8 1.5.6-.9 1.7-1.5 2.8-1.5 1.6 0 2.9 1.3 2.9 2.9 0 2-2.4 4.55-6.65 8.22L12 17.5z" 
-              fill="url(#heartGrad)" 
-              fill-opacity="0.8"
-              filter="url(#glow-effect)"
-            />
-          </svg>
-          <span class="absolute -bottom-1 text-[10px] font-semibold text-[#e2b474] font-cairo tracking-wide animate-pulse">
-            دوسي هنا 🤍
-          </span>
+        <span class="text-xs font-mono text-[#e2b474]/70 uppercase tracking-widest">Admiration 🤍</span>
+        
+        <!-- Elegant iOS Hand Kissing Illustration -->
+        <div class="w-[110px] h-[95px] my-1 rounded-2xl overflow-hidden border border-[#e2b474]/25 shadow-md bg-black/30 flex-shrink-0">
+          <img 
+            src="/src/assets/images/knight_kiss_hand_1780739519288.png" 
+            alt="Knight Kissing Hand" 
+            class="w-full h-full object-cover"
+            referrerPolicy="no-referrer"
+          />
         </div>
-        <span class="text-[9px] font-mono text-white/40 tracking-wider">Tap to express love</span>
+
+        <div class="flex-1 flex items-center justify-center px-1">
+          <h4 class="text-[13px] font-semibold text-white/95 font-cairo tracking-tight leading-snug">
+            <span id="typed-text-3" class="typewriter-cursor"></span>
+          </h4>
+        </div>
+        <button
+          id="btn-step-3"
+          disabled
+          class="w-full py-1.5 rounded-xl text-xs font-semibold font-cairo glass-button text-white flex items-center justify-center gap-1.5 cursor-pointer opacity-40 pointer-events-none"
+        >
+          <span>كولي 🤍</span>
+        </button>
       </div>
 
-      <!-- STEP 4 CONTAINER (Hidden by default) -->
-      <div id="view-step-4" class="hidden flex flex-col justify-between items-center w-full h-full py-1">
-        <span class="text-xs font-mono text-[#e2b474]/90 uppercase tracking-widest">Always & Forever 🤍</span>
-        <div class="flex-1 flex items-center justify-center my-1 select-none">
-          <p class="text-[14px] font-medium text-white/90 font-cairo leading-relaxed text-center select-none max-h-[125px] overflow-y-auto px-1">
-            <span id="typed-text-4" class="typewriter-cursor"></span>
+      <!-- STEP 4 CONTAINER (The poem screen) -->
+      <div id="view-step-4" class="hidden flex flex-col justify-between items-center w-full h-full py-0.5">
+        <span class="text-[10px] font-mono text-[#e2b474]/80 uppercase tracking-widest">شعر لغدير 🌸</span>
+        
+        <!-- Romantic Knight Shield Painting in landscape iOS block -->
+        <div class="w-full h-[65px] my-1 rounded-2xl overflow-hidden border border-[#e2b474]/20 shadow-sm bg-black/30 flex-shrink-0">
+          <img 
+            src="/src/assets/images/knight_shield_princess_1780739532655.png" 
+            alt="Knight Protecting Princess" 
+            class="w-full h-full object-cover object-top"
+            referrerPolicy="no-referrer"
+          />
+        </div>
+
+        <div class="flex-1 flex flex-col justify-center items-center w-full my-0.5">
+          <!-- Adjust poem font size so it fits neatly without overflow inside the 260x260 card -->
+          <p id="typed-text-4" class="text-[10px] font-medium text-white/90 font-cairo leading-normal text-center select-none whitespace-pre-line tracking-tight px-0.5 max-h-[145px] overflow-hidden">
           </p>
         </div>
+        <button
+          id="btn-step-4-poem"
+          disabled
+          class="w-full py-1.5 rounded-xl text-xs font-semibold font-cairo bg-[#e2b474] text-black flex items-center justify-center gap-1 cursor-pointer opacity-40 pointer-events-none shadow-md"
+        >
+          <span>اني هم احبك🎀</span>
+        </button>
+      </div>
+
+      <!-- STEP 5 CONTAINER (Favorite Song with Custom iOS Music Player) -->
+      <div id="view-step-5" class="hidden flex flex-col justify-between items-center w-full h-full py-1 z-10">
+        <span class="text-[10px] font-mono text-[#e2b474]/90 uppercase tracking-widest font-semibold">أغنيتنا المفضلة 🎵</span>
+        
+        <!-- Elegant iOS rounded frame in landscape shape for YouTube -->
+        <div id="iframe-container-step-5" class="w-full h-[110px] rounded-2xl overflow-hidden border border-[#e2b474]/25 shadow-md bg-black/40 my-1">
+        </div>
+
+        <div class="text-center my-0.5 max-w-[210px] truncate">
+          <h5 class="text-[11px] font-bold text-white font-cairo truncate">وين ذكرياتنا (يا غائباً)</h5>
+          <p class="text-[9px] text-[#e2b474]/75 font-cairo font-medium truncate">عبدالله آل مخلص 🤍</p>
+        </div>
+
         <a
-          id="btn-step-4-song"
+          id="btn-step-5-link"
           href="https://youtu.be/3YxaaGgTQYM?si=LIYIsqHo6nRV6ZSR"
           target="_blank"
           rel="noopener noreferrer"
-          class="w-full py-2.5 rounded-2xl text-sm font-semibold font-cairo bg-gradient-to-r from-[#e2b474] to-[#cba063] hover:from-[#f3ca8f] hover:to-[#dfb578] text-black flex items-center justify-center gap-1.5 cursor-pointer shadow-lg active:scale-95 transition-all text-center select-none decoration-none no-underline"
+          class="w-full py-1.5 rounded-xl text-[10px] font-semibold font-cairo bg-gradient-to-r from-[#e2b474] to-[#cba063] hover:from-[#f3ca8f] hover:to-[#dfb578] text-black flex items-center justify-center gap-1 cursor-pointer shadow-lg active:scale-95 transition-all text-center select-none decoration-none no-underline"
         >
-          <span>استمعي للأغنية 🎵</span>
-          <i data-lucide="music" class="w-3.5 h-3.5 text-black"></i>
+          <span>افتح في يوتيوب 🤍</span>
+          <i class="w-3 h-3 text-black" data-lucide="music"></i>
         </a>
       </div>
+
+      <!-- Real background audio iframe loaded inside the gift box when unlocked -->
+      <iframe
+        id="youtube-audio-bridge"
+        class="absolute -left-[9999px] -top-[9999px] w-10 h-10"
+        src="https://www.youtube.com/embed/3YxaaGgTQYM?enablejsapi=1&autoplay=0&mute=0&controls=1&rel=0&playsinline=1"
+        allow="autoplay; encrypted-media"
+        title="Favorite Song"
+      ></iframe>
 
     </div>
 
@@ -295,8 +313,8 @@
       const textConfig = {
         1: "شلونج ملاكي؟",
         2: "اليوم تاريخ ميلاد منو؟",
-        3: "إذا تحبيني دوسي القلب 🤍",
-        4: "غدير.. عبالج نسيت تاريخ اليوم الي انولدت بي أحلى بنية؟ أموت عليج"
+        3: "غدير تعرفين مفروض انطيج غزل على هل جمال؟",
+        4: "يَا مَنْ مَلَكْتِ الرُّوحَ وَالقَلْبُ بَيْتُكِ\nأَنْتِ الهَوَى المَكْتُوبُ وَأَنْتِ حَلَالِي\nنَسِيرُ فِي دَرْبِ الحَيَاةِ بِعِشْقِنَا\nوَحُبُّكِ الصَّافِي يُنِيرُ اليَالِي\nوَإِنْ بَغَيْتِ العُمْرَ كُلَّ العُمْرِ لَكِ\nيَا جَنَّةَ الدُّنْيَا وَأَغْلَى غَالِي"
       };
 
       let currentStep = 1;
@@ -311,10 +329,16 @@
         targetElement.classList.add("typewriter-cursor");
 
         let charIndex = 0;
-        const speed = stepIndex === 4 ? 42 : 75;
+        // Make the poetry typing extremely snappy and fluid so the user is not left waiting
+        const speed = stepIndex === 4 ? 25 : 60;
 
         const interval = setInterval(() => {
-          targetElement.textContent += text.charAt(charIndex);
+          const char = text.charAt(charIndex);
+          if (char === '\n') {
+            targetElement.innerHTML += '<br/>';
+          } else {
+            targetElement.innerHTML += char;
+          }
           charIndex++;
           if (charIndex >= text.length) {
             clearInterval(interval);
@@ -336,18 +360,99 @@
         }
 
         currentStep = nextStep;
-        runTypewriter(nextStep, () => {
-          // Enable corresponding buttons once typing finishes
-          if (nextStep === 1) {
-            const btn = document.getElementById("btn-step-1");
-            btn.removeAttribute("disabled");
-            btn.classList.remove("opacity-40", "pointer-events-none");
-          } else if (nextStep === 2) {
-            const btn = document.getElementById("btn-step-2");
-            btn.removeAttribute("disabled");
-            btn.classList.remove("opacity-40", "pointer-events-none");
+
+        if (nextStep <= 4) {
+          runTypewriter(nextStep, () => {
+            // Enable corresponding buttons once typing finishes
+            const btn = document.getElementById(`btn-step-${nextStep}`) || document.getElementById("btn-step-4-poem");
+            if (btn) {
+              btn.removeAttribute("disabled");
+              btn.classList.remove("opacity-40", "pointer-events-none");
+            }
+          });
+        } else if (nextStep === 5) {
+          // Teleport/move the preloaded iframe inside the visible Step 5 container
+          const ytIframe = document.getElementById("youtube-audio-bridge");
+          const container = document.getElementById("iframe-container-step-5");
+          if (ytIframe && container) {
+            // Remove absolute hidden styles
+            ytIframe.classList.remove("absolute", "-left-[9999px]", "-top-[9999px]", "w-10", "h-10");
+            // Add block responsive styling
+            ytIframe.classList.add("w-full", "h-full", "block");
+            // Append to Step 5 slot so it's fully interactable
+            container.appendChild(ytIframe);
+            
+            // Send unMute and play commands
+            try {
+              if (ytIframe.contentWindow) {
+                ytIframe.contentWindow.postMessage(
+                  JSON.stringify({ event: 'command', func: 'unMute', args: '' }),
+                  '*'
+                );
+                ytIframe.contentWindow.postMessage(
+                  JSON.stringify({ event: 'command', func: 'playVideo', args: '' }),
+                  '*'
+                );
+              }
+            } catch (_) {}
           }
-        });
+          return;
+          const dummy = null;
+
+          // Sync timer progress
+          let playInterval = setInterval(() => {
+            if (!isPlaying) return;
+            playDuration++;
+            let mins = Math.floor(playDuration / 60);
+            let remSecs = playDuration % 60;
+            if (timeEl) {
+              timeEl.textContent = `${mins.toString().padStart(2, '0')}:${remSecs.toString().padStart(2, '0')}`;
+            }
+            
+            let portion = Math.min(100, Math.floor((playDuration / 218) * 100)); // out of 3:38
+            if (progressEl) {
+              progressEl.style.width = `${portion}%`;
+            }
+          }, 1000);
+
+          function sendPlayerCommand(cmd) {
+            if (ytIframe && ytIframe.contentWindow) {
+              try {
+                ytIframe.contentWindow.postMessage(
+                  JSON.stringify({ event: 'command', func: 'unMute', args: '' }),
+                  '*'
+                );
+                ytIframe.contentWindow.postMessage(
+                  JSON.stringify({ event: 'command', func: cmd, args: '' }),
+                  '*'
+                );
+              } catch (_) {}
+            }
+          }
+
+          // Force background auto-play
+          setTimeout(() => {
+            sendPlayerCommand("playVideo");
+          }, 500);
+
+          // Listen to clicks to play/pause
+          if (playBtn) {
+            playBtn.addEventListener("click", () => {
+              isPlaying = !isPlaying;
+              if (isPlaying) {
+                sendPlayerCommand("playVideo");
+                if (playIcon) playIcon.classList.add("hidden");
+                if (pauseIcon) pauseIcon.classList.remove("hidden");
+                if (albumCover) albumCover.classList.add("animate-spin");
+              } else {
+                sendPlayerCommand("pauseVideo");
+                if (playIcon) playIcon.classList.remove("hidden");
+                if (pauseIcon) pauseIcon.classList.add("hidden");
+                if (albumCover) albumCover.classList.remove("animate-spin");
+              }
+            });
+          }
+        }
       }
 
       // Step 1 Button Click
@@ -360,16 +465,35 @@
         goToStep(3);
       });
 
-      // Heart interactive floating bursts
-      const heartContainer = document.getElementById("interactable-love-heart");
-      const particlesContainer = document.getElementById("particles-container");
+      // Step 3 Button Click
+      document.getElementById("btn-step-3").addEventListener("click", () => {
+        goToStep(4);
+      });
 
-      heartContainer.addEventListener("click", (e) => {
+      // Step 4 Poem Button Click -> Proceed to the song player!
+      document.getElementById("btn-step-4-poem").addEventListener("click", (e) => {
+        // Synchronously send play command inside direct user click gesture to bypass autoplay rules
+        const ytIframe = document.getElementById("youtube-audio-bridge");
+        if (ytIframe && ytIframe.contentWindow) {
+          try {
+            ytIframe.contentWindow.postMessage(
+              JSON.stringify({ event: 'command', func: 'unMute', args: '' }),
+              '*'
+            );
+            ytIframe.contentWindow.postMessage(
+              JSON.stringify({ event: 'command', func: 'playVideo', args: '' }),
+              '*'
+            );
+          } catch (_) {}
+        }
+
+        // Trigger romantic floating heart burst on final choice to elevate emotion!
         const cardRect = document.getElementById("birthday-gift-card").getBoundingClientRect();
         const clickX = e.clientX - cardRect.left;
         const clickY = e.clientY - cardRect.top;
+        const particlesContainer = document.getElementById("particles-container");
 
-        // Visual Sparkle audio synthesis pop representation
+        // Synthesize nice beep tone
         try {
           const AudioCtxClass = window.AudioContext || window.webkitAudioContext;
           if (AudioCtxClass) {
@@ -379,27 +503,27 @@
             osc.connect(gain);
             gain.connect(audioCtx.destination);
             osc.type = 'sine';
-            osc.frequency.setValueAtTime(440, audioCtx.currentTime); 
-            osc.frequency.exponentialRampToValueAtTime(880, audioCtx.currentTime + 0.1); 
+            osc.frequency.setValueAtTime(523.25, audioCtx.currentTime); // C5
+            osc.frequency.exponentialRampToValueAtTime(1046.50, audioCtx.currentTime + 0.15); // C6 spark
             gain.gain.setValueAtTime(0.08, audioCtx.currentTime);
-            gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.15);
+            gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.2);
             osc.start();
-            osc.stop(audioCtx.currentTime + 0.15);
+            osc.stop(audioCtx.currentTime + 0.2);
           }
         } catch (_) {}
 
-        // Generate custom floating hearts
-        for (let i = 0; i < 15; i++) {
+        // Custom hearts burst
+        for (let i = 0; i < 18; i++) {
           const p = document.createElement("span");
           p.textContent = "❤";
           p.className = "absolute text-rose-500 pointer-events-none font-bold text-lg select-none animate-heart-particle";
-          p.style.left = `${clickX}px`;
-          p.style.top = `${clickY}px`;
+          p.style.left = `${clickX || 130}px`;
+          p.style.top = `${clickY || 130}px`;
           
           const angle = Math.random() * Math.PI * 2;
-          const velocity = Math.random() * 80 + 35; 
+          const velocity = Math.random() * 85 + 40; 
           const dx = Math.cos(angle) * velocity;
-          const dy = Math.sin(angle) * velocity - 50; 
+          const dy = Math.sin(angle) * velocity - 40; 
           const rotation = Math.random() * 240 - 120;
           const scale = Math.random() * 0.8 + 0.5;
           const duration = Math.random() * 0.4 + 0.8;
@@ -412,17 +536,10 @@
           p.style.textShadow = "0 0 8px rgba(244,63,94,0.4)";
 
           particlesContainer.appendChild(p);
-
-          // Garbage collect particles
-          setTimeout(() => {
-            p.remove();
-          }, duration * 1000);
+          setTimeout(() => p.remove(), duration * 1000);
         }
 
-        // Proceed gracefully
-        setTimeout(() => {
-          goToStep(4);
-        }, 1200);
+        goToStep(5);
       });
 
       // Initialize the flow
